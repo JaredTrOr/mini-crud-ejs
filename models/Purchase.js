@@ -5,6 +5,6 @@ module.exports = (sequelize, type) => {
             primaryKey: true,
             autoIncrement: true
         },
-        date_purchase: type.STRING,
+        datePurchase: type.STRING,
     }, {timestamps: false});
 };

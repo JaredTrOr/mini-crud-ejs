@@ -5,12 +5,12 @@ module.exports = (sequelize, type) => {
             primaryKey: true,
             autoIncrement: true
         },
-        first_name: type.STRING,
-        last_name:  type.STRING,
+        firstName: type.STRING,
+        lastName:  type.STRING,
         age: type.STRING,
         email:  type.STRING,
-        phone_number: type.STRING,
-        zip_code: type.STRING,
-        serial_number: type.STRING
+        phoneNumber: type.STRING,
+        zipCode: type.STRING,
+        serialNumber: type.STRING
     }, {timestamps: false});
 };

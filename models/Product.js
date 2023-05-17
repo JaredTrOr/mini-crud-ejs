@@ -5,7 +5,7 @@ module.exports = (sequelize, type) => {
             primaryKey: true,
             autoIncrement: true
         },
-        product_name: type.STRING,
+        prodcutName: type.STRING,
         type: type.STRING,
         size: type.STRING
     }, {timestamps: false});

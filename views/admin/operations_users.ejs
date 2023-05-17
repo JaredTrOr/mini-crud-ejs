@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Operations users</title>
+    </head>
+    <body>
+        <h1>Operations users</h1>
+
+        <form action="/admin/create_user" method="post" id="userForm">
+            <div class="row-user-form">
+                <label for="firstName">First name:</label>
+                <input 
+                    type="text" 
+                    placeholder="Write your first name" 
+                    id="firstName" 
+                    name="firstName"
+                >
+            </div>
+            <div class="row-user-form">
+                <label for="lastName">Last name:</label>
+                <input 
+                    type="text" 
+                    placeholder="Write your last name" 
+                    id="lastName" 
+                    name="lastName"
+                >
+            </div>
+            <div class="row-user-form">
+                <label for="age">Age:</label>
+                <input 
+                    type="number" 
+                    placeholder="Write your age" 
+                    id="age" 
+                    name="age"
+                >
+            </div>
+            <div class="row-user-form">
+                <label for="email">Email:</label>
+                <input 
+                    type="email" 
+                    placeholder="Write your email" 
+                    id="email" 
+                    name="email"
+                >
+            </div>
+            <div class="row-user-form">
+                <label for="phoneNumber">Phone number:</label>
+                <input 
+                    type="text" 
+                    placeholder="Write your phone number" 
+                    id="phoneNumber" 
+                    name="phoneNumber"
+                >
+            </div>
+            
+            <div class="row-user-form">
+                <button type="submit">Create new user</button>
+            </div>
+        </form>
+        <br><br><br>
+        <div class="table-user-container">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Age</th>
+                        <th>Email</th>
+                        <th>Phone number</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <%  
+                    users.forEach(user => {
+                    %>
+                    <tr>
+                        <td><%=user.first_name%></td>
+                        <td><%=user.last_name%></td>
+                        <td><%=user.age%></td>
+                        <td><%=user.email%></td>
+                        <td><%=user.phone_number%></td>
+                    </tr>
+                   <%})%>
+                </tbody>
+            </table>
+        </div>
+
+    </body>
+</html>

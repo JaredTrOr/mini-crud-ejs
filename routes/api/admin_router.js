@@ -6,23 +6,26 @@ router.get('/', async (req,res) => {
         const users = await User.findAll();
         res.render('admin/operations_users', {users});
     }catch(err){
-        res.send(`Error: ${err}`);
+        
     }   
 });
 
 router.post('/create_user', async (req,res) => {
     try{
-        const {firstName, lastName, age, email, phoneNumber} = req.body;
-        await User.create({
-            first_name: firstName,
-            last_name: lastName,
-            age: age, 
-            email: email,
-            phone_number: phoneNumber
-        });
+        await User.create(req.body);
         res.redirect('/admin');
     }catch(err) {
-        res.send(`Error: ${err}`);
+        
+    }
+});
+
+router.delete('/delete_user/:id', async (req,res) => {
+    try{
+        await User.destroy({where: {id: req.params.id}});
+        console.log('User deleted succesfuly');
+        res.json({success: true, msg: '/admin'});
+    }catch(err) {
+        res.json({success: false, msg: 'Something went wrong...'});
     }
 });
 

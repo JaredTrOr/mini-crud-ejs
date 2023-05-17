@@ -65,11 +65,13 @@
             <table border="1">
                 <thead>
                     <tr>
+                        <th>Id</th>
                         <th>First name</th>
                         <th>Last name</th>
                         <th>Age</th>
                         <th>Email</th>
                         <th>Phone number</th>
+                        <th>Operations</th>
                     </tr>
                 </thead>
 
@@ -78,16 +80,22 @@
                     users.forEach(user => {
                     %>
                     <tr>
-                        <td><%=user.first_name%></td>
-                        <td><%=user.last_name%></td>
+                        <td><%=user.id%></td>
+                        <td><%=user.firstName%></td>
+                        <td><%=user.lastName%></td>
                         <td><%=user.age%></td>
                         <td><%=user.email%></td>
-                        <td><%=user.phone_number%></td>
+                        <td><%=user.phoneNumber%></td>
+                        <td>
+                            <a href="">Update</a> /
+                            <a href="#" onclick="deleteUser('<%= user.id %>')">Delete</a>
+                        </td>
                     </tr>
                    <%})%>
                 </tbody>
             </table>
         </div>
 
+    <script src="public/js/operations_users.js"></script>
     </body>
 </html>

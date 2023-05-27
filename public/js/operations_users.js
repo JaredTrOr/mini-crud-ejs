@@ -4,7 +4,7 @@ async function deleteUser(userId) {
         const jsonData = await response.json();
 
         const {success, msg} = jsonData;
-        if(success) window.location.reload
+        if(success) window.location.href = msg
         else console.log(msg);
 
     }

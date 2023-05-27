@@ -12,6 +12,7 @@ router.get('/', async (req,res) => {
 
 router.post('/create_user', async (req,res) => {
     try{
+        console.log(req.body);
         await User.create(req.body);
         res.redirect('/admin');
     }catch(err) {
